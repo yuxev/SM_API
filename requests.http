@@ -26,3 +26,13 @@ Content-Type: application/json
 # Delete user by id (replace id)
 DELETE http://localhost:3000/users/delete/fd270195-7f68-4632-bdc1-7f96f78b2cba
 Accept: application/json
+
+###
+
+# Update user by id (replace id)
+PATCH http://localhost:3000/users/update/e7a3d6b8-1f4a-4d1f-bc1a-1234567890ab
+Content-Type: application/json
+
+{
+    "name": "UpdatedName"
+}

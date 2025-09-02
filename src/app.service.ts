@@ -76,10 +76,26 @@ export class UsersService {
 			throw new NotFoundException('User not found');
 
 		this.users.delete(id);
+
 		// persist entire users array to disk (simple implementation)
     	fs.writeFile(this.filePath, JSON.stringify(Array.from(this.users.values()), null, 2), 'utf8');
 
 		return `User with id ${id} deleted successfully`;
 	}
+
+	updateUser(id: string, dto: UpodateUserDto): CreateUserDto & { id: string; createdAt?: string } {
+		const existingUser = this.users.get(id);
+		if (!existingUser)
+			throw new NotFoundException('User not found');
+
+		// overwrite the existing user with the new data
+		const updatedUser = { ...existingUser, ...dto };
+		this.users.set(id, updatedUser);
+
+		// persist entire users array to disk (simple implementation)
+		fs.writeFile(this.filePath, JSON.stringify(Array.from(this.users.values()), null, 2), 'utf8');	
+		return updatedUser;	
+	}
+
 
 }

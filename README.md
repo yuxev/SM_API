@@ -60,7 +60,8 @@ All user records are stored in a JSON file named `users.json` located in the pro
     "id": "uuid-or-id",
     "name": "Alice",
     "email": "alice@example.com",
-    "password": "hashed-or-plain"
+    "password": "hashed-or-plain",
+    "role": "Admin" | "Seller" | "Buyer"
   }
 ]
 ```
@@ -96,40 +97,64 @@ npm run test:e2e  # run e2e tests (if configured)
 
 ## HTTP API
 
-Base URL: `http://localhost:3000` (adjust if your env differs)
 
-Endpoints (conventional paths — confirm in `src/app.controller.ts`):
+Base URL: `http://localhost:3000`
 
-- POST /users
-  - Create a new user
-  - Body (JSON): `{ "name": string, "email": string, "password": string }`
-  - Validations: name and email required; email format validated; password requirements depend on DTO implementation
+### Endpoints
 
-- GET /users
-  - Return an array of users (reads `users.json`)
+- `GET    /users` — Get all users
+- `GET    /users/:id` — Get user by ID
+- `POST   /users/create` — Create a new user
+  - Body: `{ "name": string, "email": string, "password": string, "role": string }`
+- `DELETE /users/delete/:id` — Delete user by ID
+- `PATCH  /users/update/:id` — Update user by ID (partial update)
+  - Body: any subset of user fields (e.g. `{ "name": "UpdatedName" }`)
 
-- GET /users/:id
-  - Return a single user by ID
+#### Example requests (REST Client)
 
-- PATCH /users/:id
-  - Apply a partial update to a user (only provided fields updated)
-  - Body: partial user fields (e.g. `{ "name": "new" }`)
+You can use the included `requests.http` file with the [REST Client VS Code extension](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) for quick API testing. Open `requests.http` and click "Send Request" above any block.
 
-- DELETE /users/:id
-  - Remove a user by ID and update `users.json`
+Example request blocks:
 
-Example curl to create a user:
+```http
+# Get all users
+GET http://localhost:3000/users
+Accept: application/json
 
-```bash
-curl -X POST http://localhost:3000/users \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Alice","email":"alice@example.com","password":"secret"}'
-```
+###
 
-Example curl to list all users:
+# Get user by id
+GET http://localhost:3000/users/{userId}
+Accept: application/json
 
-```bash
-curl http://localhost:3000/users
+###
+
+# Create user
+POST http://localhost:3000/users/create
+Content-Type: application/json
+
+{
+  "name": "AdminUser",
+  "email": "Admin@example.com",
+  "password": "Passsword123",
+  "role": "Admin"
+}
+
+###
+
+# Delete user by id
+DELETE http://localhost:3000/users/delete/{userId}
+Accept: application/json
+
+###
+
+# Update user by id
+PATCH http://localhost:3000/users/update/{userId}
+Content-Type: application/json
+
+{
+  "name": "UpdatedName"
+}
 ```
 
 ## DTOs & Validation
@@ -191,4 +216,3 @@ Requirements coverage:
 - File I/O read/write operations explained and safety notes: Documented
 - Learning-focused guidance for migrating to DB and next steps: Documented
 
-If you'd like, I can also add a sample `users.json` starter file, or implement example DTOs/controllers in `src/` and run the project to verify behavior. What would you like next?
