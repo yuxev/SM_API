@@ -1,13 +1,5 @@
 [
   {
-    "id": "e7a3d6b8-1f4a-4d1f-bc1a-1234567890ab",
-    "name": "alice",
-    "email": "alice@example.com",
-    "password": "$2b$10$abcdefghijklmnopqrstuv1234567890abcdef",
-    "role": "Buyer",
-    "createdAt": "2025-09-01T00:00:00.000Z"
-  },
-  {
     "id": "b6c8f1a2-3d4e-5f6a-7b8c-abcdef123456",
     "name": "Bob",
     "email": "bob@example.com",

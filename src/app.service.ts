@@ -85,10 +85,10 @@ export class UsersService {
 
 	updateUser(id: string, dto: UpodateUserDto): CreateUserDto & { id: string; createdAt?: string } {
 		const existingUser = this.users.get(id);
-		if (!existingUser)
+		if (!existingUser) {
 			throw new NotFoundException('User not found');
+		}
 
-		// overwrite the existing user with the new data
 		const updatedUser = { ...existingUser, ...dto };
 		this.users.set(id, updatedUser);
 
