@@ -1,0 +1,51 @@
+[
+  {
+    "id": "e7a3d6b8-1f4a-4d1f-bc1a-1234567890ab",
+    "name": "Alice",
+    "email": "alice@example.com",
+    "password": "$2b$10$abcdefghijklmnopqrstuv1234567890abcdef",
+    "createdAt": "2025-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "b6c8f1a2-3d4e-5f6a-7b8c-abcdef123456",
+    "name": "Bob",
+    "email": "bob@example.com",
+    "password": "$2b$10$uvwxyzabcdefghijklmnopqrstuv9876543210",
+    "createdAt": "2025-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "c1f9a8d4-2b3c-4e6f-8a9b-111111111111",
+    "name": "Carol",
+    "email": "carol@example.com",
+    "password": "$2b$10$carolplaceholderpasswordhash000000",
+    "createdAt": "2025-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "d2a7b6c5-4f3e-2d1c-9b8a-222222222222",
+    "name": "Dave",
+    "email": "dave@example.com",
+    "password": "$2b$10$daveplaceholderpasswordhash111111",
+    "createdAt": "2025-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "f3b8c9d0-5a6b-7c8d-0e1f-333333333333",
+    "name": "Eve",
+    "email": "eve@example.com",
+    "password": "$2b$10$eveplaceholderpasswordhash222222",
+    "createdAt": "2025-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "a4d5e6f7-8a9b-0c1d-2e3f-444444444444",
+    "name": "Frank",
+    "email": "frank@example.com",
+    "password": "$2b$10$frankplaceholderpasswordhash333333",
+    "createdAt": "2025-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "b5e6f7a8-9c0d-1e2f-3a4b-555555555555",
+    "name": "Grace",
+    "email": "grace@example.com",
+    "password": "$2b$10$graceplaceholderpasswordhash444444",
+    "createdAt": "2025-09-01T00:00:00.000Z"
+  }
+]
