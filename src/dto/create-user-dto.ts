@@ -15,7 +15,7 @@ export class CreateUserDto {
 
     @IsNotEmpty()
     @IsString()
-    @Min(6, { message: 'password must be at least 6 characters long' })
+    // @Min(6)
     password: string;
 
     @IsEnum(["Buyer", "Seller", "Admin"], { message: 'role is required' })

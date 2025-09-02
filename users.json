@@ -4,6 +4,7 @@
     "name": "Alice",
     "email": "alice@example.com",
     "password": "$2b$10$abcdefghijklmnopqrstuv1234567890abcdef",
+    "role": "Buyer",
     "createdAt": "2025-09-01T00:00:00.000Z"
   },
   {
@@ -11,6 +12,7 @@
     "name": "Bob",
     "email": "bob@example.com",
     "password": "$2b$10$uvwxyzabcdefghijklmnopqrstuv9876543210",
+    "role": "Seller",
     "createdAt": "2025-09-01T00:00:00.000Z"
   },
   {
@@ -18,6 +20,7 @@
     "name": "Carol",
     "email": "carol@example.com",
     "password": "$2b$10$carolplaceholderpasswordhash000000",
+    "role": "Buyer",
     "createdAt": "2025-09-01T00:00:00.000Z"
   },
   {
@@ -25,6 +28,7 @@
     "name": "Dave",
     "email": "dave@example.com",
     "password": "$2b$10$daveplaceholderpasswordhash111111",
+    "role": "Seller",
     "createdAt": "2025-09-01T00:00:00.000Z"
   },
   {
@@ -32,6 +36,7 @@
     "name": "Eve",
     "email": "eve@example.com",
     "password": "$2b$10$eveplaceholderpasswordhash222222",
+    "role": "Buyer",
     "createdAt": "2025-09-01T00:00:00.000Z"
   },
   {
@@ -39,6 +44,7 @@
     "name": "Frank",
     "email": "frank@example.com",
     "password": "$2b$10$frankplaceholderpasswordhash333333",
+    "role": "Seller",
     "createdAt": "2025-09-01T00:00:00.000Z"
   },
   {
@@ -46,6 +52,7 @@
     "name": "Grace",
     "email": "grace@example.com",
     "password": "$2b$10$graceplaceholderpasswordhash444444",
+    "role": "Buyer",
     "createdAt": "2025-09-01T00:00:00.000Z"
   }
 ]
