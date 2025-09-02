@@ -6,10 +6,6 @@ export class CreateUserDto {
     @IsString()
     name: string;
 
-    @IsInt()
-    @Min(0)
-    age: number;
-
     @IsEmail()
     email: string;
 

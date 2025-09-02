@@ -1,39 +1,41 @@
-import { Controller, Get , Param, ValidationPipe , ParseIntPipe, NotFoundException, Post, Body} from '@nestjs/common';
-import { AppService , UsersService } from './app.service';
+import { Controller, Get, Param, ValidationPipe, ParseIntPipe, NotFoundException, Post, Body, Delete } from '@nestjs/common';
+import { AppService, UsersService } from './app.service';
 import { CreateUserDto } from './dto/create-user-dto';
 import { UpodateUserDto } from './dto/Update-user-dto';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+	constructor(private readonly appService: AppService) { }
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
+	@Get()
+	getHello(): string {
+		return this.appService.getHello();
+	}
 }
 
 @Controller('users')
 export class UsersController {
-  constructor(private readonly userService: UsersService) {}
+	constructor(private readonly userService: UsersService) { }
 
-  @Get()
-  getAllUsres(): string {
-    return this.userService.getUsers();
-  }
+	@Get()
+	getAllUsres(): string {
+		return this.userService.getUsers();
+	}
 
-  @Get(':id')
-  getUserById(@Param('id') id: string ): string {
-    const user = this.userService.getUser(id);
-    if (!user)
-      throw new NotFoundException('User not found');
+	@Get(':id')
+	getUserById(@Param('id') id: string): string {
+		const user = this.userService.getUser(id);
+		if (!user)
+			throw new NotFoundException('User not found');
+		return JSON.stringify(user);
+	}
 
-    return JSON.stringify(user);
-  }
-
-  @Post('create')
-  createUser(@Body() dto: CreateUserDto, ValidationPipe ): string {
-    const id = this.userService.createUser(dto);
-    return id;
-  }
+	@Post('create')
+	createUser(@Body() dto: CreateUserDto, ValidationPipe): CreateUserDto {
+		return this.userService.createUser(dto);
+	}
+	@Delete('delete/:id')
+	deleteUser(@Param('id') id: string): string {
+		return this.userService.deleteUser(id);
+	}
 }

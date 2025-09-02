@@ -18,6 +18,11 @@ Content-Type: application/json
     "name": "AdminUser",
     "email": "Admin@example.com",
     "password": "Passsword123",
-    "age": 30,
     "role": "Admin"
 }
+
+###
+
+# Delete user by id (replace id)
+DELETE http://localhost:3000/users/delete/fd270195-7f68-4632-bdc1-7f96f78b2cba
+Accept: application/json

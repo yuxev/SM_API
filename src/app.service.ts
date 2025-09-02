@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user-dto';
 import { UpodateUserDto } from './dto/Update-user-dto';
 import { promises as fs } from 'fs';
@@ -60,12 +60,26 @@ export class UsersService {
 		return this.users.get(id);
 	}
 
-	createUser(dto: CreateUserDto): string {
+	createUser(dto: CreateUserDto): CreateUserDto {
 		const id = randomUUID();
 		const now = new Date().toISOString();
-		this.users.set(id, { ...dto, id, createdAt: now });
-		console.log('user data', {id, ...dto,  createdAt: now });
-		return id;
+		this.users.set(id, { id, ...dto, createdAt: now });
+		
+		// persist entire users array to disk (simple implementation)
+    	fs.writeFile(this.filePath, JSON.stringify(Array.from(this.users.values()), null, 2), 'utf8');
+
+		return this.users.get(id)!;
+	}
+
+	deleteUser(id : string ): string {
+		if (!this.users.has(id))
+			throw new NotFoundException('User not found');
+
+		this.users.delete(id);
+		// persist entire users array to disk (simple implementation)
+    	fs.writeFile(this.filePath, JSON.stringify(Array.from(this.users.values()), null, 2), 'utf8');
+
+		return `User with id ${id} deleted successfully`;
 	}
 
 }
