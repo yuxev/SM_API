@@ -1,31 +1,19 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/banner-dark.svg" />
+  <img src="docs/banner-light.svg" width="100%" alt="SM_API: User management CRUD API in NestJS, validated with DTOs and saved to a JSON file." />
+</picture>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/lifecycle-dark.svg" />
+  <img src="docs/lifecycle-light.svg" width="100%" alt="ValidationPipe, CreateUserDto, UsersService map, users.json on disk" />
+</picture>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/endpoints-dark.svg" />
+  <img src="docs/endpoints-light.svg" width="100%" alt="GET /users, GET /users/:id, POST /users/create, PATCH /users/update/:id, DELETE /users/delete/:id" />
+</picture>
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-# UM API — File-based User Management (NestJS)
+---
 
 A small learning project built with NestJS that implements full CRUD for users using file-based persistence (no database). It's designed to teach DTOs, validation pipes, and Node.js file I/O by storing user records in a JSON file (`users.json`).
 
@@ -216,3 +204,4 @@ Requirements coverage:
 - File I/O read/write operations explained and safety notes: Documented
 - Learning-focused guidance for migrating to DB and next steps: Documented
 
+<sub>Diagrams in <code>docs/</code> are generated SVGs, drawn to match the code in this repo.</sub>
